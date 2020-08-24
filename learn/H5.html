@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UI自动化</title>
+</head>
+<body>
+<!--输入文本-->
+    <input type="text">
+    <br>
+<!--只读-->
+    <input type="text" readonly placeholder="请输入">
+    <br>
+    喜欢的动漫:
+<!--    复选框-->
+    <input type="checkbox">龙珠
+    <input type="checkbox">火影
+    <input type="checkbox">海贼王
+<!--默认选中-->
+    <input type="checkbox" checked>犬夜叉
+<!--    换行-->
+    <br>
+<!--单选框-->
+    <input type="radio" name="sex">男
+    <input type="radio" name="sex">女
+    <br>
+
+<!--按钮置灰-->
+    <input type="button" value="登录" disabled>
+    <button>点点点</button>
+    <br>
+<!--上传文件-->
+    <input type="file">
+    <br>
+<!--链接-->
+    <a href="http://103.160.116.174:9080/mspsys/wrh/login">链接</a>
+    <br>
+<!--图片-->
+    <img src="http://103.160.51.63:9080/hxdsbank/techcomp/ui/css/default/images/acap-logo.png">
+    <br>
+<!--下拉列表-->
+    年龄:<select>
+        <option>18岁以下</option>
+        <option>18-25</option>
+        <option>25-30</option>
+        <option>30-40</option>
+        <option>40以上</option>
+    </select>
+    <br>
+<!--form（表单）-->
+    <form>
+        <input type="text">
+<!--        table（表格）-->
+        <table border="1">
+<!--            行-->
+            <tr>
+<!--                列-->
+                <td>123</td>
+                <td>124</td>
+                <td>125</td>
+            </tr>
+            <tr>
+                <td>456</td>
+                <td>457</td>
+                <td>458</td>
+            </tr>
+        </table>
+    </form>
+    <br>
+<!--iframe-->
+    <iframe src="http://103.160.116.174:9080/mspsys/wrh/login">
+
+    </iframe>
+    <iframe src="www.w3school.com.cn">
+
+    </iframe>
+    <br>
+<!--文本域-->
+    <textarea></textarea>
+    <br>
+<!--标题-->
+    <h1 id = 'title'>大家好呀</h1>
+    <h2>大家好呀</h2>
+    <h3>大家好呀</h3>
+    <h4>大家好呀</h4>
+    <h5>大家好呀</h5>
+    <h6>大家好呀</h6>
+    <br>
+<!--javascript-->
+    <script>
+<!--        window.onload = function(){-->
+<!--        alert('hahahahahahahah')-->
+<!--        };-->
+        a = document.getElementById("title");
+        a.onmouseover = function(){
+	        a.style.color = 'green';
+        };
+
+        a.onmouseout = function(){
+	        a.style.color = 'red';
+        };
+
+    </script>
+</body>
+</html>
