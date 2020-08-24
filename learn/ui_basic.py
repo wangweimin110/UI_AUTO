@@ -553,6 +553,9 @@ GitHub 是一个面向开源及私有软件项目的托管平台，因为只支�
        pycharm-VCS-Enable Version...-Git
        VCS-Git-Remotes-url
        VCS-Git-add
+jenkins与github建立连接的凭证
+    用户名和密码http连接
+    插件：
 '''
 # from selenium import webdriver
 # from selenium.webdriver.support.wait import WebDriverWait
