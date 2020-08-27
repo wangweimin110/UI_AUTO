@@ -552,10 +552,16 @@ GitHub 是一个面向开源及私有软件项目的托管平台，因为只支�
 上传代码到github过程
        pycharm-VCS-Enable Version...-Git
        VCS-Git-Remotes-url
-       VCS-Git-add
+       VCS-Git-add-Commit File
+       VCS-Git-
 jenkins与github建立连接的凭证
     用户名和密码http连接
     插件：
+过程：
+    1、开发者提交代码到代码管理平台
+    2、Jenkins获取远程代码（代码管理平台上）
+    3、Jenkins将源代码实现自动化打包
+    4、执行脚本
 '''
 # from selenium import webdriver
 # from selenium.webdriver.support.wait import WebDriverWait
