@@ -557,11 +557,45 @@ GitHub 是一个面向开源及私有软件项目的托管平台，因为只支�
 jenkins与github建立连接的凭证
     用户名和密码http连接
     插件：
-过程：
+构建触发器：
+    Poll SCM
+        每隔一段指定时间去代码管理工具（Github）检查是否有新代码上传，如果有则自动构建
+        *****  分别代表分钟、小时、天、月、星期
+        例：H/30**** 每隔30分钟执行一次
+            *3**1-5   周一到周五凌晨三点执行
+            *11**  每月1号1点执行
+            *代表全部，-代表区间，/表示间隔  H 1-17/3***  每天1点到17点，每三小时构建一次
+Jenkins代码构建：
+    1、设置python解释器位置（r'C:\Users\WWM\AppData\Local\Programs\Python\Python37\python.exe'）放在全局变量
+        系统管理-系统配置-全局属性-Environment variables（键：python 值：解释器位置）
+    2、设置文件路径及命令
+        项目-配置-构建-增加构建步骤-Execute Windows batch command（执行Windows批处理命令）
+发送邮件：
+    整个邮件配置分为三部分
+        1、发件人测试邮件配置
+            163邮箱为例：设置-开启POP3/SMTP服务获取授权码
+            系统管理-配置-Jenkins Location-系统管理员邮件地址（邮箱号）
+            系统管理-配置-邮件通知-SMTP server（163中SMTP服务器地址）
+            系统管理-配置-邮件通知-Default user E-mail suffix（邮箱默认后缀 @163.com）
+            系统管理-配置-邮件通知-高级-Use SMTP Authentication（使用SMTP认证）
+                用户名（邮箱）  密码（授权码）
+                通过发送测试邮件测试配置
+        2、发件人正式邮件配置
+            安装插件 Emile Extension
+            系统管理-配置-Extended E-mail Notification-SMTP server（163中SMTP服务器地址）
+            系统管理-配置-Extended E-mail Notification-Default user E-mail suffix（邮箱默认后缀 @163.com）
+            系统管理-配置-Extended E-mail Notification-高级-Use SMTP Authentication（使用SMTP认证）
+                用户名（邮箱）  密码（授权码）
+            系统管理-配置-Extended E-mail Notification-Default Content Type
+            系统管理-配置-Extended E-mail Notification-Default Content
+        3、收件人配置
+            项目-配置-构建后操作-Editable Email Notification-set..(高级)-
+             Triggers-Recipient List(收件人列表，1391691574@qq.com)
+部署过程：
     1、开发者提交代码到代码管理平台
     2、Jenkins获取远程代码（代码管理平台上）
     3、Jenkins将源代码实现自动化打包
-    4、执行脚本
+    4、执行shell脚本
 '''
 # from selenium import webdriver
 # from selenium.webdriver.support.wait import WebDriverWait
